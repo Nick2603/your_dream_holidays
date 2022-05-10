@@ -1,7 +1,7 @@
-import './App.module.scss';
+import styles from "./App.module.scss";
 
 const App = () => {
-  return <div>Your Dream Holidays</div>;
+  return <div className={styles.div}>Your Dream Holidays</div>;
 };
 
 export default App;
