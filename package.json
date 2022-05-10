@@ -54,8 +54,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
-    "prettier": "^2.6.2",
-    "tsc-files": "^1.1.3"
+    "prettier": "^2.6.2"
   },
   "husky": {
     "hooks": {
@@ -64,7 +63,7 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-      "eslint"
+      "prettier --write"
     ]
   }
 }
