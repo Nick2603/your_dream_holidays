@@ -56,15 +56,5 @@
     "eslint-plugin-react-hooks": "^4.3.0",
     "prettier": "^2.6.2",
     "tsc-files": "^1.1.3"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-      "prettier --write src/**/*.ts{,x}"
-    ]
   }
 }
