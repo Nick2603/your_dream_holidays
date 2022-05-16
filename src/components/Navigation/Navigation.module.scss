@@ -1,0 +1,16 @@
+.nav {
+  display: flex;
+  list-style: none;
+
+  li {
+    margin-right: 10px;
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+  a:hover {
+    color: gray;
+  }
+}
