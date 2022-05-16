@@ -1,16 +1,17 @@
+@import 'src/_variables';
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: lightskyblue;
+  background-color: $secondary-color;
   text-align: center;
   min-height: 10vh;
-  margin-bottom: 10px;
   padding-right: 40px;
 
   a {
     text-decoration: none;
-    color: black;
+    color: $dark-color;
   }
 }
 

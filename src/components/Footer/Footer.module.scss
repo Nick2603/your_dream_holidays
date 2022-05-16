@@ -1,9 +1,10 @@
+@import 'src/_variables';
+
 .footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: lightskyblue;
+  background-color: $secondary-color;
   min-height: 10vh;
   text-align: center;
-  margin-top: 10px;
 }

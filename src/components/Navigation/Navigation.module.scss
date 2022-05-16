@@ -1,3 +1,5 @@
+@import 'src/_variables';
+
 .nav {
   display: flex;
   list-style: none;
@@ -7,10 +9,10 @@
 
     a {
       text-decoration: none;
-      color: black;
+      color: $dark-color;
     }
   }
   a:hover {
-    color: gray;
+    color: $primary-color;
   }
 }

@@ -23,7 +23,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # VisualStudioCode
-.vscode/**/*
+.vscode
 
 # Husky
-.husky/**/*
+.husky

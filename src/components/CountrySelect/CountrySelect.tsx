@@ -4,7 +4,7 @@ import Autocomplete from "@mui/material/Autocomplete";
 import { CountryList } from "./CountryList";
 
 export const CountrySelect: FC = () => {
-  const [value, setValue] = useState<string | null>("");
+  const [value, setValue] = useState<string | null>(CountryList[0]);
   const [inputValue, setInputValue] = useState("");
 
   return (
