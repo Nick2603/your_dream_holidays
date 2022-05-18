@@ -1,22 +1,26 @@
-import React from "react";
-import { useDispatch } from "react-redux";
-import { useAppSelector } from "../../hooks/redux";
-import { userSlice } from "../../store/reducers/UserSlice";
+import React, { FC } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import styles from "./App.module.scss";
+import { Header } from "../Header/Header";
+import { Home } from "../Pages/HomePage/HomePage";
+import { Footer } from "../Footer/Footer";
+import { NotFoundPage } from "../Pages/NotFoundPage";
+import { UserPage } from "../Pages/UserPage/UserPage";
+import { CountryPage } from "../Pages/CountryPage/CountryPage";
 
-const App = () => {
-  const { count } = useAppSelector((state) => state.userReducer);
-  const { increment, decrement } = userSlice.actions;
-  const dispatch = useDispatch();
-
+export const App: FC = () => {
   return (
-    <>
-      <div className={styles.div}>Your Dream Holidays</div>
-      <h3>{count}</h3>
-      <button onClick={() => dispatch(increment(1))}>Increment</button>
-      <button onClick={() => dispatch(decrement(1))}>Increment</button>
-    </>
+    <BrowserRouter>
+      <Header />
+      <main className={styles.wrapper}>
+        <Routes>
+          <Route path="*" element={<NotFoundPage />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/userpage" element={<UserPage />} />
+          <Route path="/countrypage/:country" element={<CountryPage />} />
+        </Routes>
+      </main>
+      <Footer />
+    </BrowserRouter>
   );
 };
-
-export default App;

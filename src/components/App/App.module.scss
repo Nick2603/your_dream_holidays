@@ -1,3 +1,5 @@
-.div {
-  background-color: aqua;
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 90vh;
 }
