@@ -2,8 +2,8 @@ import React, { FC } from "react";
 import styles from "./Header.module.scss";
 import { NavLink } from "react-router-dom";
 import { Navigation } from "../Navigation/Navigation";
-import { Slogan } from "../Slogan/Slogan";
-import { Logo } from "../Logo/Logo";
+import { Slogan } from "../../reusableComponents/Slogan/Slogan";
+import { Logo } from "../../reusableComponents/Logo/Logo";
 
 export const Header: FC = () => {
   return (

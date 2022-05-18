@@ -1,14 +1,7 @@
-import React, { FC, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import React, { FC } from "react";
 import styles from "./CountryPage.module.scss";
 
 export const CountryPage: FC = () => {
-  const location = useLocation();
-
-  useEffect(() => {
-    console.log(location.pathname);
-  });
-
   return (
     <div className={styles.wrapper}>
       <div className={styles["country-pic"]}>country-pic</div>

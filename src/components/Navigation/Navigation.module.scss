@@ -1,4 +1,4 @@
-@import "src/_variables";
+@import "src/styles/_variables";
 
 .nav {
   display: flex;
@@ -15,10 +15,10 @@
 
   a:hover {
     font-weight: bold;
-    text-shadow: 2px 2px 2px #ce5937;
+    text-shadow: $primary-shadow;
   }
 }
 
 .active-link {
-  font-weight: bold !important;
+  font-weight: bold;
 }

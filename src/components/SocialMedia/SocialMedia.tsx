@@ -4,7 +4,7 @@ import { SocialMediaLink } from "../SocialMediaLink/SocialMediaLink";
 import fbIcon from "../../assets/icons/fbIcon.svg";
 import instagramIcon from "../../assets/icons/instagramIcon.svg";
 import twitterIcon from "../../assets/icons/twitterIcon.svg";
-import vkIcon from "../../assets/icons/vkIcon.svg";
+import tikTokIcon from "../../assets/icons/tiktokIcon.svg";
 
 interface ILinkDetails {
   href?: string;
@@ -21,7 +21,7 @@ export const SocialMedia: FC = () => {
       alt: "instagram icon",
     },
     { href: "https://twitter.com/", src: twitterIcon, alt: "twitter icon" },
-    { href: "http://vk.com/", src: vkIcon, alt: "vk icon" },
+    { href: "https://www.tiktok.com/", src: tikTokIcon, alt: "tiktok icon" },
   ];
 
   return (

@@ -3,16 +3,18 @@ import { useNavigate } from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import { CountryList } from "./CountryList";
-import { MyButton } from "../MyButton/MyButton";
+import { CustomButton } from "../../reusableComponents/CustomButton/CustomButton";
 
 export const CountrySelect: FC = () => {
-  const [value, setValue] = useState<string | null>(CountryList[0]);
+  const [countrySelectorValue, setCountrySelectorValue] = useState<
+    string | null
+  >(CountryList[0]);
   const [inputValue, setInputValue] = useState("");
   const navigate = useNavigate();
 
   const navigateToCountryPage = () => {
-    if (value) {
-      const country = value.split(" ").join("");
+    if (countrySelectorValue) {
+      const country = countrySelectorValue.split(" ").join("");
       navigate(`/countrypage/${country?.toLowerCase()}`);
     }
   };
@@ -22,9 +24,9 @@ export const CountrySelect: FC = () => {
       <div>
         <br />
         <Autocomplete
-          value={value}
+          value={countrySelectorValue}
           onChange={(event: unknown, newValue: string | null) => {
-            setValue(newValue);
+            setCountrySelectorValue(newValue);
           }}
           inputValue={inputValue}
           onInputChange={(event, newInputValue) => {
@@ -38,7 +40,7 @@ export const CountrySelect: FC = () => {
           )}
         />
       </div>
-      <MyButton navigate={navigateToCountryPage} />
+      <CustomButton navigate={navigateToCountryPage} />
     </>
   );
 };
