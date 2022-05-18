@@ -1,10 +1,12 @@
-@import 'src/_variables';
+@import "src/_variables";
 
 .footer {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   background-color: $secondary-color;
   min-height: 10vh;
   text-align: center;
+  color: $dark-color;
+  padding: 0 30px;
 }

@@ -1,0 +1,40 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+  grid-template-areas:
+    "cp cp cp cf ww ww ww al al al"
+    "cp cp cp . ww ww ww al al al"
+    "ci ci ci ci ww ww ww al al al"
+    "ci ci ci ci sw sw sw cr cr cr"
+    "ci ci ci ci sw sw sw cr cr cr"
+    "ci ci ci ci sw sw sw cr cr cr";
+}
+
+.country-pic {
+  grid-area: cp;
+}
+
+.country-flag {
+  grid-area: cf;
+}
+
+.weather-widget {
+  grid-area: ww;
+}
+
+.actions-list {
+  grid-area: al;
+}
+
+.country-info {
+  grid-area: ci;
+}
+
+.sightseeings-widget {
+  grid-area: sw;
+}
+
+.covid-restriction {
+  grid-area: cr;
+}
