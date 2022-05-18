@@ -1,10 +1,10 @@
 import React, { FC } from "react";
 import styles from "./SocialMedia.module.scss";
 import { SocialMediaLink } from "../SocialMediaLink/SocialMediaLink";
-import fbIcon from "../../assets/Icons/fbIcon.svg";
-import instagramIcon from "../../assets/Icons/instagramIcon.svg";
-import twitterIcon from "../../assets/Icons/twitterIcon.svg";
-import vkIcon from "../../assets/Icons/vkIcon.svg";
+import fbIcon from "../../assets/icons/fbIcon.svg";
+import instagramIcon from "../../assets/icons/instagramIcon.svg";
+import twitterIcon from "../../assets/icons/twitterIcon.svg";
+import vkIcon from "../../assets/icons/vkIcon.svg";
 
 interface ILinkDetails {
   href?: string;
