@@ -1,4 +1,4 @@
-@import 'src/_variables';
+@import "src/styles/_variables";
 
 .nav {
   display: flex;
@@ -12,7 +12,13 @@
       color: $dark-color;
     }
   }
+
   a:hover {
-    color: $primary-color;
+    font-weight: bold;
+    text-shadow: $primary-shadow;
   }
+}
+
+.active-link {
+  font-weight: bold;
 }

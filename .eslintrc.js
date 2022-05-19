@@ -31,6 +31,7 @@ module.exports = {
     project: "./tsconfig.json",
   },
   rules: {
+    "no-console": ["error", { allow: ["error"] }],
     "linebreak-style": "off",
     "prettier/prettier": [
       "error",

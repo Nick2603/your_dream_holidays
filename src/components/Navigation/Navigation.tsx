@@ -3,7 +3,7 @@ import styles from "./Navigation.module.scss";
 import { NavLink } from "react-router-dom";
 
 export const Navigation = () => {
-  const navLinks = ["Home", "Country", "User"];
+  const navLinks = ["Home", "User"];
 
   return (
     <nav>
@@ -12,6 +12,9 @@ export const Navigation = () => {
           <li key={index}>
             <NavLink
               to={`/${link === "Home" ? "" : link.toLowerCase() + "page"}`}
+              className={({ isActive }) =>
+                isActive ? styles["active-link"] : ""
+              }
             >
               {link}
             </NavLink>

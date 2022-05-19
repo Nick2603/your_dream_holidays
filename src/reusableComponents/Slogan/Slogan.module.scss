@@ -1,5 +1,8 @@
+@import "src/styles/_variables";
+
 .wrapper {
   margin: 10px;
   font-style: italic;
   font-size: 15px;
+  color: $dark-color;
 }
