@@ -1,8 +1,8 @@
-import React from "react";
+import React, { FC } from "react";
 import styles from "./Navigation.module.scss";
 import { NavLink } from "react-router-dom";
 
-export const Navigation = () => {
+export const Navigation: FC = () => {
   const navLinks = ["Home", "User"];
 
   return (

@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import styles from "./Logo.module.scss";
-import LogoPic from "../../assets/logo/yourDreamHolidaysLogo.svg";
+import LogoPic from "../../assets/logo/YourDreamHolidaysLogo.svg";
 
 export const Logo: FC = () => {
   return (

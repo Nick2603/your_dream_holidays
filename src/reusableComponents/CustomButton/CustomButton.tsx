@@ -4,15 +4,16 @@ import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 
 interface ICustomButtonProps {
-  navigate?: MouseEventHandler;
+  eventHandler?: MouseEventHandler;
+  text?: string;
 }
 
 export const CustomButton: FC<ICustomButtonProps> = (props) => {
   return (
     <div className={styles["my-button"]}>
       <Stack spacing={2} direction="row">
-        <Button onClick={props.navigate} variant="contained">
-          Lets Travel
+        <Button onClick={props.eventHandler} variant="contained">
+          {props.text}
         </Button>
       </Stack>
     </div>

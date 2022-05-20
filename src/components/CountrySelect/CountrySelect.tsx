@@ -40,7 +40,10 @@ export const CountrySelect: FC = () => {
           )}
         />
       </div>
-      <CustomButton navigate={navigateToCountryPage} />
+      <CustomButton
+        eventHandler={navigateToCountryPage}
+        text={"Let's Travel"}
+      />
     </>
   );
 };
