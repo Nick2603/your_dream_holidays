@@ -19,6 +19,7 @@ export const CountryActionsList: FC = () => {
   const [country, setCountry] = useState("");
   const [activities, setActivities] = useState("");
   const [email, setEmail] = useState("");
+  const [todoList, setTodoList] = useState<string[]>([]);
 
   const handleUpdate = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -40,11 +41,21 @@ export const CountryActionsList: FC = () => {
     }
   };
 
+  const addActivity = () => {
+    if (activities) {
+      setTodoList([...todoList, activities]);
+      setActivities("");
+    } else {
+      alert("Please fill in an activity field!!!");
+    }
+  };
+
   const sendForm = () => {
-    if (country.length > 0 && activities.length > 0 && email.length > 0) {
+    if (country && todoList.length > 0 && email) {
       setCountry("");
       setActivities("");
       setEmail("");
+      setTodoList([]);
     } else {
       alert("Please fill in all fields!!!");
     }
@@ -73,7 +84,7 @@ export const CountryActionsList: FC = () => {
     <Card>
       <CardContentCustomStyles>
         <form>
-          <h4>Your Activities</h4>
+          <h4>Activities form</h4>
           {inputsData.map((v) => (
             <div key={v.id}>
               <CustomInput
@@ -89,7 +100,6 @@ export const CountryActionsList: FC = () => {
           ))}
           <div>
             <CustomTextArea
-              required={true}
               id="activities"
               name="activities"
               value={activities}
@@ -97,10 +107,16 @@ export const CountryActionsList: FC = () => {
               eventHandler={handleUpdate}
             />
           </div>
+          <CustomButton text={"Add activity"} eventHandler={addActivity} />
           <span>
             Hint: here you can create a list of preferred activities for
             particular country and send it to your email address.
           </span>
+          <div>
+            {todoList.map((activity, index) => (
+              <div key={index}>{activity}</div>
+            ))}
+          </div>
           <CustomButton text={"Sent"} eventHandler={sendForm} />
         </form>
       </CardContentCustomStyles>
