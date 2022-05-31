@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/your_dream_holidays/static/css/main.3c983c25.css",
+    "main.js": "/your_dream_holidays/static/js/main.edbc01fd.js",
+    "static/media/GermanyImage.jpg": "/your_dream_holidays/static/media/GermanyImage.175e34adfb26a5db7224.jpg",
+    "static/media/YourDreamHolidaysLogo.svg": "/your_dream_holidays/static/media/YourDreamHolidaysLogo.741f2d925b3977eec177e86494d8bbe4.svg",
+    "static/media/twitterIcon.svg": "/your_dream_holidays/static/media/twitterIcon.209d52c56ae671509ffc718f13fa70a9.svg",
+    "static/media/tiktokIcon.svg": "/your_dream_holidays/static/media/tiktokIcon.fe9e1b8ae63a02fb9fbdc3250053ae69.svg",
+    "static/media/instagramIcon.svg": "/your_dream_holidays/static/media/instagramIcon.a3c5ec804bd10ae55098f09cfbc0d8a0.svg",
+    "static/media/GermanyFlag.svg": "/your_dream_holidays/static/media/GermanyFlag.d9625f93cc14fcc164d63bed94bec76e.svg",
+    "static/media/fbIcon.svg": "/your_dream_holidays/static/media/fbIcon.199bf2ac729b1f911650c1136bdaa0bf.svg",
+    "index.html": "/your_dream_holidays/index.html",
+    "main.3c983c25.css.map": "/your_dream_holidays/static/css/main.3c983c25.css.map",
+    "main.edbc01fd.js.map": "/your_dream_holidays/static/js/main.edbc01fd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3c983c25.css",
+    "static/js/main.edbc01fd.js"
+  ]
+}
