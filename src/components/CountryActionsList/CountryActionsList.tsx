@@ -1,19 +1,8 @@
 import React, { FC, useState } from "react";
 import Card from "@mui/material/Card";
-import { CardContentCustomStyles } from "../../styles/CardContentCustomStyles";
-import { CustomButton } from "../../reusableComponents/CustomButton/CustomButton";
-import { CustomInput } from "../../reusableComponents/CustomInput/CustomInput";
-import { CustomTextArea } from "../../reusableComponents/CustomTextArea/CustomTextArea";
+import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
 import styles from "./CountryActionsList.module.scss";
-
-interface IInputsData {
-  id?: string;
-  name?: string;
-  type?: string;
-  value?: string;
-  placeholder?: string;
-  eventHandler?: React.ChangeEventHandler<HTMLInputElement>;
-}
 
 export const CountryActionsList: FC = () => {
   const [country, setCountry] = useState("");
@@ -61,65 +50,66 @@ export const CountryActionsList: FC = () => {
     }
   };
 
-  const inputsData: IInputsData[] = [
-    {
-      id: "country",
-      name: "country",
-      type: "text",
-      value: country,
-      placeholder: "Fill in country name",
-      eventHandler: handleUpdate,
-    },
-    {
-      id: "email",
-      name: "email",
-      type: "email",
-      value: email,
-      placeholder: "Fill in your email",
-      eventHandler: handleUpdate,
-    },
-  ];
-
   return (
     <Card>
-      <CardContentCustomStyles>
-        <form>
-          <h4>Activities form</h4>
-          {inputsData.map((v) => (
-            <div key={v.id}>
-              <CustomInput
-                required={true}
-                id={v.id}
-                name={v.name}
-                type={v.type}
-                value={v.value}
-                placeholder={v.placeholder}
-                eventHandler={v.eventHandler}
-              />
-            </div>
+      <form className={styles["form-wrapper"]}>
+        <h4>Actions List</h4>
+        <div>
+          <input
+            required
+            id="country"
+            name="country"
+            type="text"
+            value={country}
+            placeholder="Fill in country name"
+            onChange={handleUpdate}
+          />
+        </div>
+        <div>
+          <input
+            required
+            id="email"
+            name="email"
+            type="email"
+            value={email}
+            placeholder="Fill in your email"
+            onChange={handleUpdate}
+          />
+        </div>
+        <div>
+          <textarea
+            required
+            id="activities"
+            name="activities"
+            value={activities}
+            placeholder="Fill in preferred activities"
+            onChange={handleUpdate}
+          ></textarea>
+        </div>
+        <div style={{ margin: "10px" }}>
+          <Stack spacing={2} direction="row">
+            <Button onClick={addActivity} variant="contained">
+              Add activity
+            </Button>
+          </Stack>
+        </div>
+        <span>
+          Hint: here you can create a list of preferred activities for
+          particular country and send it to your email address.
+        </span>
+        <div>
+          {todoList.map((activity, index) => (
+            <div key={index}>{activity}</div>
           ))}
-          <div>
-            <CustomTextArea
-              id="activities"
-              name="activities"
-              value={activities}
-              placeholder="Fill in preferred activities"
-              eventHandler={handleUpdate}
-            />
-          </div>
-          <CustomButton text={"Add activity"} eventHandler={addActivity} />
-          <span>
-            Hint: here you can create a list of preferred activities for
-            particular country and send it to your email address.
-          </span>
-          <div>
-            {todoList.map((activity, index) => (
-              <div key={index}>{activity}</div>
-            ))}
-          </div>
-          <CustomButton text={"Sent"} eventHandler={sendForm} />
-        </form>
-      </CardContentCustomStyles>
+        </div>
+        <div style={{ margin: "10px" }}>
+          <Stack spacing={2} direction="row">
+            <Button onClick={sendForm} variant="contained">
+              Sent
+            </Button>
+          </Stack>
+        </div>
+      </form>
     </Card>
   );
 };

@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import { CountryList } from "./CountryList";
-import { CustomButton } from "../../reusableComponents/CustomButton/CustomButton";
+import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
 
 export const CountrySelect: FC = () => {
   const [countrySelectorValue, setCountrySelectorValue] = useState<
@@ -40,10 +41,13 @@ export const CountrySelect: FC = () => {
           )}
         />
       </div>
-      <CustomButton
-        eventHandler={navigateToCountryPage}
-        text={"Let's Travel"}
-      />
+      <div style={{ margin: "10px" }}>
+        <Stack spacing={2} direction="row">
+          <Button onClick={navigateToCountryPage} variant="contained">
+            Lets Travel
+          </Button>
+        </Stack>
+      </div>
     </>
   );
 };
