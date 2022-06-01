@@ -1,0 +1,24 @@
+.text {
+  padding: 10px;
+  display: block;
+
+  li {
+    margin-bottom: 5px;
+  }
+}
+
+.text-header {
+  display: block;
+  text-align: center;
+  font-size: 21px;
+  font-weight: bold;
+  padding: 10px 10px 0 10px;
+}
+
+.card-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}

@@ -1,0 +1,15 @@
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+
+  input {
+    margin: 5px 0;
+  }
+
+  textarea {
+    margin: 5px 0;
+  }
+}

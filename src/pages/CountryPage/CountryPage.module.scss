@@ -11,6 +11,10 @@
     "ci ci ci ci sw sw sw cr cr cr";
 }
 
+.wrapper > * {
+  margin: 5px;
+}
+
 .country-pic {
   grid-area: cp;
 }
