@@ -28,7 +28,7 @@
     "sass": "^1.51.0",
     "typescript": "^4.6.4"
   },
-  "homepage": "https://Nick2603.github.io/your_dream_holidays",
+  "homepage": "https://Nick2603.github.io/",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
