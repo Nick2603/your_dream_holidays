@@ -21,7 +21,7 @@ export const CountrySelect: FC = () => {
 
   const getCountryList = () => {
     return axios
-      .get("http://localhost:5000/countrieslist")
+      .get("http://localhost:8080/countrieslist")
       .then((res) => res.data)
       .then((data) => setCountryList(data))
       .catch(handleError);
