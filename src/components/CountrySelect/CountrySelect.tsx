@@ -1,35 +1,26 @@
 import React, { FC, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import { useAppDispatch, useAppSelector } from "../../hooks/redux";
+import { fetchCountries } from "./../../store/reducers/CountriesSlice";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 
 export const CountrySelect: FC = () => {
-  const [countryList, setCountryList] = useState([]);
+  const dispatch = useAppDispatch();
+  const { loading, error, countries } = useAppSelector(
+    (state) => state.CountriesReducer
+  );
   const [countrySelectorValue, setCountrySelectorValue] = useState<
     string | null
   >();
   const [inputValue, setInputValue] = useState("");
-  const [error, setError] = useState<Error | null>(null);
   const navigate = useNavigate();
 
-  const handleError = (err: Error) => {
-    setError(err);
-  };
-
-  const getCountryList = () => {
-    return axios
-      .get("http://localhost:8080/countrieslist")
-      .then((res) => res.data)
-      .then((data) => setCountryList(data))
-      .catch(handleError);
-  };
-
   useEffect(() => {
-    getCountryList();
-  });
+    dispatch(fetchCountries());
+  }, [dispatch]);
 
   const navigateToCountryPage = () => {
     if (countrySelectorValue) {
@@ -55,10 +46,17 @@ export const CountrySelect: FC = () => {
               setInputValue(newInputValue);
             }}
             id="controllable-states-demo"
-            options={countryList}
+            options={countries}
             sx={{ width: 300 }}
             renderInput={(params) => (
-              <TextField {...params} label="Choose your country" />
+              <TextField
+                {...params}
+                label={
+                  loading === "pending"
+                    ? "Please, wait. Loading"
+                    : "Choose your country"
+                }
+              />
             )}
           />
         </div>
